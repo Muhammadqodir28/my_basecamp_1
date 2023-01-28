@@ -1,0 +1,23 @@
+<div class='w-75 mx-auto'>
+  <p class='fs-1'>Edit project</p>
+  {{#if errorEditProject}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Error!</strong>
+      {{errorEditProject}}
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+  {{/if}}
+  <form action='/edit-project/{{project._id}}' method='post'>
+    <div class='form-floating mb-3'>
+      <input type='text' value='{{project.title}}' class='form-control' name='title' id='floatingInput' placeholder='Title'>
+      <label for='floatingInput'>Title</label>
+    </div>
+    <div class='form-floating mb-3'>
+      <textarea class='form-control' placeholder='Description' name='description' id='floatingTextarea2' style='height: 200px'>
+        {{project.description}}
+      </textarea>
+      <label for='floatingTextarea2'>Description</label>
+    </div>
+    <button type='submit' class='btn btn-primary mt-3'>Edit project</button>
+  </form>
+</div>

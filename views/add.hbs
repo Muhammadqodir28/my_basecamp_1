@@ -1,0 +1,29 @@
+<div class='row'>
+	<div class='col-md-6'>
+		<div class='w-75 mx-auto'>
+			<p class='fs-1'>Add project</p>
+			{{#if errorAddProject}}
+			<div class="alert alert-danger alert-dismissible fade show" role="alert">
+				<strong>Error!</strong>
+				{{errorAddProject}}
+				<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+			</div>
+			{{/if}}
+			<form action='/add-project' method='post'>
+				<div class='form-floating mb-3'>
+					<input type='text' class='form-control' name='title' id='floatingInput' placeholder='Title'>
+					<label for='floatingInput'>Title</label>
+				</div>
+				<div class='form-floating mb-3'>
+					<textarea class='form-control' placeholder='Description' name='description' id='floatingTextarea2'
+						style='height: 100px'></textarea>
+					<label for='floatingTextarea2'>Description</label>
+				</div>
+				<button type='submit' class='btn btn-primary mt-3'>Add project</button>
+			</form>
+		</div>
+	</div>
+	<div class='col-md-6'>
+		<img src='/add.jpg' width='100%' alt='' />
+	</div>
+</div>
